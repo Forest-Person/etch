@@ -31,27 +31,35 @@ for (let i = 0; i <= columns; i++) {
   grid.append(column)
   
 }
-
-document.body.append(grid)
-
-
+gridContainer = document.querySelector('.gridContainer')
+gridContainer.append(grid)
 
 
-var row = document.querySelectorAll('.row');
 
-row.forEach(function(item){
-  item.addEventListener('mouseover', function(event){
 
-   row[Array.from(row).indexOf(event.target)].classList.toggle('toggleBlue')
-  })
-})
+let row = document.querySelectorAll('.row');
 
-function checkIndex(event){
-  console.log(Array.from(row).indexOf(event.target))
-  
-  return Array.from(row).indexOf(event.target)
-  
-}
+
+row.forEach(
+
+(item) => item.addEventListener('mouseover', 
+
+(event) => row[Array.from(row).indexOf(event.target)].
+classList.toggle('toggleBlue')
+
+)
+
+)
+
+
+
+
+
+
+
+
+
+
 
   
 
