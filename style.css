@@ -1,9 +1,19 @@
+body {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .grid {
 
     display:flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    width:960px;
+    height: auto;
 }
 
 .column {
@@ -30,7 +40,7 @@
 
  .toggleBlue {
 
-    background-color:blue;
+    background-color:black;
     border:5px solid green;
     text-align: center;
     display: flex;

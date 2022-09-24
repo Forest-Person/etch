@@ -10,8 +10,11 @@ for a click or touch event.
 */
 
 
-let columns = 5
-let rows = 5
+
+
+
+let columns = prompt('What size of grid do you want?')
+let rows = columns
 
 grid = document.createElement('div')
 grid.className = 'grid'
@@ -44,8 +47,7 @@ row.forEach(
 
 (item) => item.addEventListener('mouseover', 
 
-(event) => row[Array.from(row).indexOf(event.target)].
-classList.toggle('toggleBlue')
+(event) => row[Array.from(row).indexOf(event.target)].classList.toggle('toggleBlue')
 
 )
 
