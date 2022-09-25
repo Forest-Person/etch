@@ -47,7 +47,7 @@ row.forEach(
 
 (item) => item.addEventListener('mouseover', 
 
-(event) => row[Array.from(row).indexOf(event.target)].classList.toggle('toggleBlue')
+(event) => row[Array.from(row).indexOf(event.target)].classList = 'toggleBlue'
 
 )
 
