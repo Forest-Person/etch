@@ -1,5 +1,12 @@
-body {
+*{
+    border:4px solid pink;
+}
 
+body {
+display:flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
 }
 .buttonDiv{
     flex:1 1 auto;
@@ -14,17 +21,17 @@ font-size: 3rem;
 }
 .grid {
 
-    display:flex;
-    flex-direction: row;
+    display:grid;
+
     justify-content: center;
-    align-items: center;
-    max-width: 960px;
+    align-content: center;
+    
     
 }
 
 .column {
     
-    flex:1 1 auto
+    padding:2px;
    
     
 }
@@ -32,8 +39,8 @@ font-size: 3rem;
 .row
  {
 
-    border:5px solid green;
-    text-align: center;
+   
+    padding:2px;
     
   
  }
@@ -41,7 +48,7 @@ font-size: 3rem;
  .toggleBlue {
 
     background-color:black;
-    border:5px solid green;
+   
     text-align: center;
     
  }

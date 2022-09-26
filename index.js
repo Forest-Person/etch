@@ -28,14 +28,14 @@ for (let i = 0; i <= columns; i++) {
 
     const row = document.createElement('div');
     row.className = 'row' 
-    row.textContent = 'item' 
+    
     column.append(row)
   }
   grid.append(column)
   
 }
-gridContainer = document.querySelector('.gridContainer')
-gridContainer.append(grid)
+
+document.body.append(grid)
 
 
 
