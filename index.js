@@ -34,8 +34,8 @@ for (let i = 0; i <= columns; i++) {
   grid.append(column)
   
 }
-
-document.body.append(grid)
+const gridContainer = document.querySelector('.gridContainer')
+gridContainer.append(grid)
 
 
 
