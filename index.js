@@ -35,7 +35,7 @@ for (let i = 0; i <= columns; i++) {
   
 }
 const gridContainer = document.querySelector('.gridContainer')
-gridContainer.append(grid)
+document.body.append(grid)
 
 
 
