@@ -23,18 +23,16 @@ for (let i = 0; i <= columns; i++) {
 
   const column = document.createElement('div');
   column.className = 'column' 
-                                                     
+                                
   for (let j = 0; j <= rows; j ++) {
 
     const row = document.createElement('div');
     row.className = 'row' 
-    
     column.append(row)
   }
   grid.append(column)
   
 }
-const gridContainer = document.querySelector('.gridContainer')
 document.body.append(grid)
 
 
@@ -44,14 +42,12 @@ let row = document.querySelectorAll('.row');
 
 
 row.forEach(
-
-(item) => item.addEventListener('mouseover', 
-
-(event) => row[Array.from(row).indexOf(event.target)].classList = 'toggleBlue'
-
+  (item)=>item.addEventListener('mouseover',
+  
+  (event) => row[Array.from(row).indexOf(event.target)].classList = 'toggleBlue')
 )
 
-)
+
 
 
 
