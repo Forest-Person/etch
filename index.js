@@ -35,7 +35,7 @@ for (let i = 0; i <= columns; i++) {
 }
 document.body.append(grid)
 
-grid.style.gridTemplateColumns = `repeat(${columns},1fr)`
+grid.style.gridTemplateColumns = `repeat(${columns},2fr)`
 
 
 
