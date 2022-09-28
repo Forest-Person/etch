@@ -30,10 +30,10 @@ font-size: 2rem;
    
   
    
-  display: inline-grid;
+  display:grid;
   
     grid-template-columns: repeat(32,2fr);
-    grid-template-rows:  repeat(32,2fr);
+    
     justify-content: center;
     align-self: center;
 }
