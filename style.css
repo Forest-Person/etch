@@ -6,11 +6,11 @@
 
 
 body  {
-display:flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
 }
 .buttonDiv{
     flex:1 1 auto;
@@ -23,28 +23,32 @@ font-size: 2rem;
 }
 
 
+.gridContainer {
+display:flex;
+flex-direction: column;
 
+width: 500px;
+height:500px;
+}
 
 
 .grid {
    
+  display:flex;
   
-   
-  display:grid;
+  flex:1 1 auto;
   
-    grid-template-columns: repeat(32,1fr);
-    grid-auto-flow:column dense;
-    justify-content: center;
-    align-self: center;
-    min-width:0px;
+  
+  
 }
+   
 
 .column {
-  
-  
-    
-  height:2px;
-  width:2px;
+  display: flex;
+  flex:1 1 auto;
+  flex-direction: column;
+  justify-content: center;
+ 
     
    
 }
@@ -52,10 +56,8 @@ font-size: 2rem;
 .row
  {
   
- 
+  flex:1;
     
-    height:2px;
-    width:2px;
     
     
     
@@ -65,9 +67,8 @@ font-size: 2rem;
  .toggleBlue {
 
     background-color:black;
-    height:2px;
-    width:2px;
-      
+    flex:1;
+     
     
     
     
