@@ -11,13 +11,20 @@ for a click or touch event.
 
 
 
+function CreateGrid() {
 
+  gridCont = document.querySelectorAll('.gridContainer')
 
-let columns = prompt('What size of grid do you want?')
-let rows = columns
+  gridCont.forEach((item) => item.removeChild(item.firstChild))
 
 grid = document.createElement('div')
 grid.className = 'grid'
+  
+ 
+let columns = prompt('What size of grid do you want?')
+let rows = columns
+
+
 
 for (let i = 0; i <= columns; i++) {
 
@@ -31,6 +38,9 @@ for (let i = 0; i <= columns; i++) {
     column.append(row)
   }
   grid.append(column)
+
+  
+  
   
 }
 
@@ -39,18 +49,23 @@ const gridContainer = document.querySelector('.gridContainer')
 
 gridContainer.append(grid)
 
-//grid.style.gridTemplateColumns = `repeat(${columns},2fr)`
-
-
-
 let row = document.querySelectorAll('.row');
 
+  row.forEach(
+    (item)=>item.addEventListener('mouseover',
+    
+    (event) => row[Array.from(row).indexOf(event.target)].classList = 'toggleBlue')
+  )
 
-row.forEach(
-  (item)=>item.addEventListener('mouseover',
-  
-  (event) => row[Array.from(row).indexOf(event.target)].classList = 'toggleBlue')
-)
+}
+
+newGrid = document.querySelector('.newGrid')
+
+newGrid.addEventListener('click', CreateGrid)
+
+
+
+
 
 
 
