@@ -13,8 +13,9 @@ body  {
   
 }
 .buttonDiv{
-    flex:1 1 auto;
-    
+    display: flex;
+    gap:4rem;
+    margin-bottom: 6rem;
 
 }
 
@@ -27,8 +28,9 @@ font-size: 2rem;
 display:flex;
 flex-direction: column;
 
-width: 500px;
-height:500px;
+width: 40rem;
+height:40rem;
+
 }
 
 
