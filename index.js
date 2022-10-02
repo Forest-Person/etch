@@ -1,4 +1,4 @@
-let row = document.querySelectorAll('.row');  //create golbal row query all for test on erase grid funciton
+CreateGrid()
 
 function CreateGrid() {    //Function which creates a grid and appends it to the gridcontainer in the body
 
@@ -38,7 +38,6 @@ ToggleGridBlack()
 }
 
 
-
 newGrid = document.querySelector('.newGrid')  
 
 newGrid.addEventListener('click', CreateGrid)  //Creates an event listener for the make new grid button that creates a new grid.
@@ -46,14 +45,12 @@ newGrid.addEventListener('click', CreateGrid)  //Creates an event listener for t
 
 eraseGridButton = document.querySelector('.eraseGrid') 
 
-  
-  //trying to create funciton to remove toggle black event listener and add white toggle class
 
-eraseGridButton.addEventListener('click' , EraseGrid)
+eraseGridButton.addEventListener('click' , EraseGrid)//erases the grid using the erase grid function
 
 
 function EraseGrid(){
-  let row = document.querySelectorAll('.row');
+  let row = document.querySelectorAll('.row');  //"erases" grid by making the backround of all .row divs white
   row.forEach((item) =>
   
   
@@ -62,20 +59,22 @@ function EraseGrid(){
 }
 
  
-function ToggleGridBlack() {
+function ToggleGridBlack() {    //function run in the creategrid function to create a new grid with black pencil with event listener
 
   let row = document.querySelectorAll('.row');
 
   row.forEach((item) =>
     
-    item.addEventListener('mouseover', () =>
-  item.style.background = 'black'
-  )
-  )
-     //For each loop with event listener that toggles 
-                                                 //the nodelist of .row class to a different class.
+    item.addEventListener('mouseover', TogglePencilBlack(item)
     
-  
+  )
+  )
   
 }
 
+
+
+function TogglePencilBlack(item) {     //Function added to eventlistener in togglegridblack function
+  return ()=>item.style.background = 'black'
+
+}
