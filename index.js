@@ -1,9 +1,10 @@
-let isDrawing = false;    //boolen flag and window event listeners to determine when the mouse is down or not to implement in later funcitons
+let isDrawing = false   //boolen flag and window event listeners to determine when the mouse is down or not to implement in later funcitons
 window.addEventListener('mousedown',()=>
 isDrawing = true)
 
 window.addEventListener('mouseup', ()=>
-isDrawing = false)
+isDrawing = false
+)
 
 
 CreateGrid()
@@ -21,6 +22,10 @@ function CreateGrid() {    //Function which creates a grid and appends it to the
   
  
 let columns = prompt('What size of grid do you want?')
+
+if (columns > 100) {
+  columns = prompt('No more than 100 Please!')
+}
 let rows = columns
 
 
@@ -49,13 +54,10 @@ gridContainer.append(grid)  //Grid ^^^ has been created and appened to the DOM.
 
 
 newGrid = document.querySelector('.newGrid')  
-
 newGrid.addEventListener('click', CreateGrid)  //Creates an event listener for the make new grid button that creates a new grid.
 
 
 eraseGridButton = document.querySelector('.eraseGrid') 
-
-
 eraseGridButton.addEventListener('click' , EraseGrid)//erases the grid using the erase grid function for the earase grid button
 
 
@@ -73,12 +75,14 @@ function ToggleGridBlack() {    //function run in the creategrid function to cre
 
   let row = document.querySelectorAll('.row');
   
-  row.forEach((item) =>
+  row.forEach((item) =>{
+    
+  
+    item.addEventListener('mouseover',TogglePencilBlack(item)
+  
     
     
-    item.addEventListener('mouseover', TogglePencilBlack(item)))
-    
-
+)})
   
 }
 
@@ -91,11 +95,11 @@ pencilClass.addEventListener('mousedown', ToggleGridBlack)
 function TogglePencilBlack(item) {     //Function added to eventlistener in togglegridblack function
    
   
-  return  ()=>item.style.background = 'black'
+   return ()=>item.style.background = 'black'
    
-  
-  
 }
+  
+
 
 function ToggleGridRainbow() {
 
@@ -105,12 +109,7 @@ function ToggleGridRainbow() {
 
   let row = document.querySelectorAll('.row');
 
-  /*row.forEach((item) =>
-    
-    item.removeEventListener('mouseover', TogglePencilBlack(item)
-    
-  )
-  )*/
+  
   row.forEach((item) =>
     
   item.addEventListener('mouseover', TogglePencilRainbow(item)
