@@ -1,4 +1,14 @@
+let isDrawing = false;    //boolen flag and window event listeners to determine when the mouse is down or not to implement in later funcitons
+window.addEventListener('mousedown',()=>
+isDrawing = true)
+
+window.addEventListener('mouseup', ()=>
+isDrawing = false)
+
+
 CreateGrid()
+
+
 
 function CreateGrid() {    //Function which creates a grid and appends it to the gridcontainer in the body
 
@@ -33,7 +43,7 @@ const gridContainer = document.querySelector('.gridContainer')
 
 gridContainer.append(grid)  //Grid ^^^ has been created and appened to the DOM. 
 
-ToggleGridBlack()
+
 
 }
 
@@ -46,7 +56,7 @@ newGrid.addEventListener('click', CreateGrid)  //Creates an event listener for t
 eraseGridButton = document.querySelector('.eraseGrid') 
 
 
-eraseGridButton.addEventListener('click' , EraseGrid)//erases the grid using the erase grid function
+eraseGridButton.addEventListener('click' , EraseGrid)//erases the grid using the erase grid function for the earase grid button
 
 
 function EraseGrid(){
@@ -62,19 +72,70 @@ function EraseGrid(){
 function ToggleGridBlack() {    //function run in the creategrid function to create a new grid with black pencil with event listener
 
   let row = document.querySelectorAll('.row');
-
+  
   row.forEach((item) =>
     
-    item.addEventListener('mouseover', TogglePencilBlack(item)
     
-  )
-  )
+    item.addEventListener('mouseover', TogglePencilBlack(item)))
+    
+
   
 }
 
 
 
+  let pencilClass = document.querySelector('.usePencil')
+  pencilClass.addEventListener('mousedown', ToggleGridBlack)
+
+
 function TogglePencilBlack(item) {     //Function added to eventlistener in togglegridblack function
-  return ()=>item.style.background = 'black'
+   
+  
+  return  ()=>item.style.background = 'black'
+   
+  
+  
+}
+
+function ToggleGridRainbow() {
+
+  //1. Remove eventlistener togglegridblack on .row class.
+  //2. Add new eventlistener for rainbow pencil button that activates new event listenr for .row class on click.
+  //3. Add eventlistener for the .row class including the togglerainbowpencil function.
+
+  let row = document.querySelectorAll('.row');
+
+  row.forEach((item) =>
+    
+    item.removeEventListener('mouseover', TogglePencilBlack(item)
+    
+  )
+  )
+  row.forEach((item) =>
+    
+  item.addEventListener('mouseover', TogglePencilRainbow(item)
+ 
+))
+
+  
+}
+
+let rainbowPencil = document.querySelector('.rainbow')  // Eventlistenr on make rainbow pencil mode button
+
+rainbowPencil.addEventListener('click', ToggleGridRainbow)
+
+
+
+function TogglePencilRainbow(item) {   //creates randomnumber for rgb values and takes the row nodelist item as input
+  const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
+  const r = randomBetween(0, 255);
+  const g = randomBetween(0, 255);
+  const b = randomBetween(0, 255);
+  const rgb = `rgb(${r},${g},${b})`; // Collect all to a css color string
+
+
+  console.log(rgb)
+ return() => item.style.background = rgb
+
 
 }
