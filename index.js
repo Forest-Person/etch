@@ -84,8 +84,8 @@ function ToggleGridBlack() {    //function run in the creategrid function to cre
 
 
 
-  let pencilClass = document.querySelector('.usePencil')
-  pencilClass.addEventListener('mousedown', ToggleGridBlack)
+let pencilClass = document.querySelector('.usePencil') //Adds event listener for use pencil button that will use the togglegridblack funciton.
+pencilClass.addEventListener('mousedown', ToggleGridBlack)
 
 
 function TogglePencilBlack(item) {     //Function added to eventlistener in togglegridblack function
@@ -105,12 +105,12 @@ function ToggleGridRainbow() {
 
   let row = document.querySelectorAll('.row');
 
-  row.forEach((item) =>
+  /*row.forEach((item) =>
     
     item.removeEventListener('mouseover', TogglePencilBlack(item)
     
   )
-  )
+  )*/
   row.forEach((item) =>
     
   item.addEventListener('mouseover', TogglePencilRainbow(item)
@@ -138,4 +138,17 @@ function TogglePencilRainbow(item) {   //creates randomnumber for rgb values and
  return() => item.style.background = rgb
 
 
+}
+
+let eraser = document.querySelector('.eraser')
+eraser.addEventListener('click', EraserTip)
+
+function EraserTip() {
+let row = document.querySelectorAll('.row')
+
+row.forEach((item)=>
+item.addEventListener('mouseover', ()=>
+item.style.background = 'white'
+)
+)
 }
