@@ -1,13 +1,6 @@
-let isDrawing = false   //boolen flag and window event listeners to determine when the mouse is down or not to implement in later funcitons
-window.addEventListener('mousedown',()=>
-isDrawing = true)
-
-window.addEventListener('mouseup', ()=>
-isDrawing = false
-)
 
 
-CreateGrid()
+CreateGrid()  //first grid is created on page load with user specification
 
 
 
@@ -66,18 +59,19 @@ function EraseGrid(){
   row.forEach((item) =>
   
   
-  item.style.background = 'white'
+  item.style.backgroundColor = 'white'
   )
 }
 
  
-function ToggleGridBlack() {    //function run in the creategrid function to create a new grid with black pencil with event listener
+function ToggleGridBlack(event) {    //function run in the creategrid function to create a new grid with black pencil with event listener
 
+  
   let row = document.querySelectorAll('.row');
   
   row.forEach((item) =>{
     
-  
+
     item.addEventListener('mouseover',TogglePencilBlack(item)
   
     
@@ -95,9 +89,9 @@ pencilClass.addEventListener('mousedown', ToggleGridBlack)
 function TogglePencilBlack(item) {     //Function added to eventlistener in togglegridblack function
    
   
-   return ()=>item.style.background = 'black'
+   return ()=>item.style.backgroundColor = 'black'}
    
-}
+
   
 
 
@@ -134,7 +128,7 @@ function TogglePencilRainbow(item) {   //creates randomnumber for rgb values and
 
 
   console.log(rgb)
- return() => item.style.background = rgb
+ return() => item.style.backgroundColor = rgb
 
 
 }
@@ -147,7 +141,7 @@ let row = document.querySelectorAll('.row')
 
 row.forEach((item)=>
 item.addEventListener('mouseover', ()=>
-item.style.background = 'white'
+item.style.backgroundColor = 'white'
 )
 )
 }

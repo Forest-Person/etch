@@ -1,6 +1,6 @@
 *{box-sizing: border-box;
   /*border:2px solid green;*/
-  user-select:none;
+  
 
 }
 
@@ -10,17 +10,32 @@ body  {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: lightskyblue;
   
 }
 .buttonDiv{
     display: flex;
     gap:4rem;
-    margin-bottom: 6rem;
+    margin-bottom: 3rem;
 
+}
+.etchTitle{
+
+  font-size:3rem ;
+  font-family: 'Courier New';
+}
+.sketchBoundry {
+
+  border:5px solid green;
+  padding:2rem;
+  border-radius: 15%;
+  background: aqua;
 }
 
 #buttonStyle{
 font-size: 2rem;
+font-family: 'Courier New';
+padding:.5rem;
 }
 
 
@@ -32,6 +47,7 @@ width: 40rem;
 height:40rem;
 border-radius: 15%;
 overflow: hidden;
+background-color: white;
 }
 
 
