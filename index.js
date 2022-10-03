@@ -1,4 +1,11 @@
+let isDrawing = false   //boolen flag and window event listeners to determine when the mouse is down or not to implement in later funcitons
+document.body.addEventListener('mousedown',()=>
+isDrawing = true)
 
+document.body.addEventListener('mouseup', ()=>
+isDrawing = false
+)
+document.body.addEventListener('mouseover',()=>console.log(isDrawing))
 
 CreateGrid()  //first grid is created on page load with user specification
 
@@ -89,7 +96,7 @@ pencilClass.addEventListener('mousedown', ToggleGridBlack)
 function TogglePencilBlack(item) {     //Function added to eventlistener in togglegridblack function
    
   
-   return ()=>item.style.backgroundColor = 'black'}
+   return ()=> {if(isDrawing){item.style.backgroundColor = 'black'}}}
    
 
   
