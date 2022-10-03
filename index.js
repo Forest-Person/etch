@@ -135,10 +135,10 @@ function TogglePencilRainbow(item) {   //creates randomnumber for rgb values and
 
 
   console.log(rgb)
- return() => item.style.backgroundColor = rgb
+ 
+ return ()=> {if(isDrawing){item.style.backgroundColor = rgb}}}
 
 
-}
 
 let eraser = document.querySelector('.eraser')
 eraser.addEventListener('click', EraserTip)
@@ -147,8 +147,10 @@ function EraserTip() {
 let row = document.querySelectorAll('.row')
 
 row.forEach((item)=>
-item.addEventListener('mouseover', ()=>
-item.style.backgroundColor = 'white'
-)
-)
-}
+item.addEventListener('mouseover', EraseIt(item)))}
+
+
+function EraseIt(item) {     //Function added to eventlistener in togglegridblack function
+   
+  
+  return ()=> {if(isDrawing){item.style.backgroundColor = 'white'}}}
