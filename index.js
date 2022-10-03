@@ -147,7 +147,9 @@ function EraserTip() {
 let row = document.querySelectorAll('.row')
 
 row.forEach((item)=>
-item.addEventListener('mouseover', EraseIt(item)))}
+item.addEventListener('mouseover', EraseIt(item))
+
+)}
 
 
 function EraseIt(item) {     //Function added to eventlistener in togglegridblack function
